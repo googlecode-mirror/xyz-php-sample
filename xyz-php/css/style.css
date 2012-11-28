@@ -1,0 +1,334 @@
+.order-detail-buttons {
+	
+}
+
+.custom .ui-btn-inner {
+	padding-top: 1.5px;
+}
+
+.custom {
+	width: 170px;
+	height: 25px;
+	padding: 0px;
+	font-size: 9px;
+}
+
+.ui-bar-b,.ui-body-b,.ui-btn-up-b,.ui-overlay-b {
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.08, rgb(0,
+		0, 0) ), color-stop(0.96, rgb(23, 54, 66) ),
+		color-stop(1, rgb(126, 120, 122) ) );
+}
+
+.ui-bar-y {
+	background-image: linear-gradient(bottom, rgb(67, 82, 127) 1%,
+		rgb(161, 167, 179) 2%, rgb(255, 255, 255) 100% );
+	background-image: -o-linear-gradient(bottom, rgb(67, 82, 127) 1%,
+		rgb(161, 167, 179) 2%, rgb(255, 255, 255) 100% );
+	background-image: -moz-linear-gradient(bottom, rgb(67, 82, 127) 1%,
+		rgb(161, 167, 179) 2%, rgb(255, 255, 255) 100% );
+	background-image: -webkit-linear-gradient(bottom, rgb(67, 82, 127) 1%,
+		rgb(161, 167, 179) 2%, rgb(255, 255, 255) 100% );
+	background-image: -ms-linear-gradient(bottom, rgb(67, 82, 127) 1%,
+		rgb(161, 167, 179) 2%, rgb(255, 255, 255) 100% );
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.01, rgb(67,
+		82, 127) ), color-stop(0.02, rgb(161, 167, 179) ),
+		color-stop(1, rgb(255, 255, 255) ) );
+}
+
+@font-face {
+	font-family: 'RobotoLtRegular';
+	src: url('/fonts/roboto-regular_20110716-webfont.eot');
+	src: url('/fonts/roboto-regular_20110716-webfont.eot?#iefix')
+		format('embedded-opentype'),
+		url('/fonts/roboto-regular_20110716-webfont.woff') format('woff'),
+		url('/fonts/roboto-regular_20110716-webfont.ttf') format('truetype'),
+		url('/fonts/roboto-regular_20110716-webfont.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body,ul,li {
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+body {
+	font-family: 'RobotoLtRegular';
+}
+
+.ui-icon-pvc-logo {
+	background-image: url("../img/pvc-icon-logo.png");
+}
+
+.box {
+	position: relative;
+	margin-top: 10px;
+	margin-left: 25px;
+	margin-right: 25px;
+	margin-bottom: 10px;
+	padding: 30px;
+	background-image:
+		url("http://subtlepatterns.com/patterns/lightpaperfibers.png");
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), inset 0 0 50px
+		rgba(0, 0, 0, 0.1);
+	border-width: 6px 0px 6px 0px;
+	border-image: url(../img/border.png) 27 repeat;
+	border-left: 1px;
+	border-right: 1px;
+}
+
+.box:before,.box:after {
+	position: absolute;
+	width: 40%;
+	height: 10px;
+	content: ' ';
+	left: 12px;
+	bottom: 12px;
+	background: transparent;
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+	z-index: -1;
+}
+
+.box:after {
+	left: auto;
+	right: 12px;
+	transform: skew(5deg) rotate(5deg);
+}
+
+.ui-content {
+	padding: 0px;
+}
+
+.carousel-item {
+	width: 100%;
+	display: block;
+}
+
+.logo {
+	width: 40px;
+	padding: 5px 10px;
+	float: left;
+}
+
+#category-list {
+	margin: 0px;
+}
+
+#header {
+	overflow: visible; /* Let menu content overflow outside the header */
+	height: 50px;
+}
+
+#header div {
+	padding-left: 40%;
+}
+
+#header div span {
+	line-height: 50px;
+	color: white;
+}
+
+#header ul { /* Menu Name */
+	margin-top: 0px;
+}
+
+#header .ui-btn-corner-all {
+	/* border-radius: 0; /* Make the menu button squarish */
+	
+}
+
+#header ul ul { /* Menu Item List */
+	position: absolute; /* Position absolutely */
+	display: none; /* Hide */
+	z-index: 500; /* Ensure visibility over other elements on page */
+	margin-top: 0px;
+	/* Bring menu closer to button; not needed on mobile */
+	margin-left: 20px /* Make the menu aligned with the button */
+}
+
+#header ul ul li {
+	width: 130%; /* Fixed width menu items*/
+	display: block; /* JQM makes a inline-blocks... reset it to block */
+}
+
+#header ul ul li a {
+	white-space: normal; /* Stop long menu names from truncating */
+}
+
+#header ul:hover ul {
+	/* display: block; /* Display menu on hover over parent */
+	
+}
+
+#menu-left {
+	float: left;
+	margin-left: 0.5em;
+}
+
+#menu-right {
+	float: right;
+	list-style-type: none;
+}
+
+#menu-left ul {
+	margin-left: 0 em;
+	width: 50%;
+	height: 60%;
+}
+
+#menu-left ul li {
+	margin-left: 0 em;
+	height: 80%;
+}
+
+#menu-right ul {
+	margin-right: 0.5em;
+	right: 0em;
+}
+
+#home .ui-header {
+	height: 75px;
+}
+
+#home .ui-header h1 {
+	font-size: 16pt;
+	margin-bottom: 0px;
+}
+
+#login-widget {
+	position: absolute;
+	top: 10px;
+}
+
+.float-right {
+	position: absolute;
+	right: .75em;
+	bottom: 1em;
+}
+
+div .relative {
+	position: relative;
+}
+
+div .white-bar {
+	display: block;
+	position: absolute;
+	top: 1em;
+	left: 0px;
+	background-color: rgba(255, 255, 255, .8);
+	color: black;
+}
+
+div .center-header {
+	width: 11em;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div .left-header {
+	padding-left: 4%;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	color: #2E4180;
+	font-family: 'Futura';
+}
+
+div.central-button {
+	width: 153px;
+	margin: 0px auto;
+}
+
+div.bottom-button {
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+p.title-name {
+	padding-left: 4%;
+}
+
+p.subtitle {
+	font-size: 80%;
+	margin-bottom: 0px;
+	padding-left: 5%;
+}
+
+table.cart-summary {
+	font-size: 80%;
+	width: 100%;
+	border-spacing: 0;
+}
+
+td.cart-summary-left {
+	padding-left: 30%;
+}
+
+td.cart-summary-right {
+	padding-right: 3%;
+}
+
+td.cart-image {
+	width: 30%;
+}
+
+img.display-image {
+	width: 100%;
+}
+
+table.item-display {
+	width: 100%;
+	font-size: 85%;
+}
+
+table.item-display td {
+	width: 40%;
+}
+
+span.item-display {
+	padding-left: 5%;
+}
+
+ul.item-details {
+	font-size: 75%;
+	padding-left: 10%;
+}
+
+table.order-summary {
+	font-size: 80%;
+	width: 100%;
+}
+
+table.order-summary td {
+	text-align: right;
+}
+
+td.padding-right {
+	padding-right: 5%;
+}
+
+td.button-right {
+	padding-right: 5%;
+	float: right;
+	width: 10%;
+}
+
+td.padding-left {
+	padding-left: 20%;
+}
+
+table.payment-summary {
+	font-size: 80%;
+	width: 100%;
+	border-spacing: 0;
+}
+
+table.receipt {
+	font-size: 85%;
+	width: 100%;
+}
+
+table.receipt td {
+	padding-left: 5%;
+}

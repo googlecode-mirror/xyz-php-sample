@@ -1,0 +1,87 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+  ontent="width=device-width, initial-scale=1.0, user-scalable=0, maximum-scale=1.0">
+<title>XYZ Inc</title>
+
+<link rel="stylesheet" href="css/jquery.mobile-1.1.1.min.css" />
+<link rel="stylesheet" href="css/jquery.mobile.theme-1.1.1.min.css" />
+<link rel="stylesheet" href="css/style.css" />
+
+<script type="text/javascript"
+  src="https://wallet-web.sandbox.google.com/online/v2/merchant/merchant.js"></script>
+<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="js/jquery.mobile-1.2.0.min.js"></script>
+<script type="text/javascript">
+	/**
+	 * Attaches click handlers to actionable HTML elements
+	 */
+	function initClickEvent() {
+		document.getElementById('item1').addEventListener('click', function() {
+			$("#itemName").val($("#item_name1").text());
+			$("#itemPrice").val($("#item_price1").text());
+			$("#itemImage").val($("#item_image1").attr("src"));
+			document.forms["itemDetailForm"].submit();
+		});
+		document.getElementById('item2').addEventListener('click', function() {
+			$("#itemName").val($("#item_name2").text());
+			$("#itemPrice").val($("#item_price2").text());
+			$("#itemImage").val($("#item_image2").attr("src"));
+			document.forms["itemDetailForm"].submit();
+		});
+		document.getElementById('item3').addEventListener('click', function() {
+			$("#itemName").val($("#item_name3").text());
+			$("#itemPrice").val($("#item_price3").text());
+			$("#itemImage").val($("#item_image3").attr("src"));
+			document.forms["itemDetailForm"].submit();
+		});
+	}
+	window.onload = initClickEvent;
+</script>
+</head>
+<body>
+  <!-- ITEM DETAILS PAGE -->
+  <div data-role="page" id="camera-detail" data-theme="c">
+    <div data-role="header" data-theme="b" id="header">
+      <div>
+        <span>XYZ, Inc.</span>
+      </div>
+    </div>
+    <div data-role="header" data-theme="y" id="header2">
+      <div class="left-header">
+        <span>Don't miss our free shipping today</span>
+      </div>
+    </div>
+    <div data-role="content">
+      <div id="home-menu">
+        <ul id="category-list" data-role="listview" data-theme="d">
+          <li id="item1"><img class="float-right"
+            src="img/XY000.png" id="item_image1"> </br> <span
+            id="item_name1"> Camera XY001 </span></br> $<span
+            id="item_price1">800</span></li>
+          <li id="item2"><img class="float-right"
+            src="img/XY001.png" id="item_image2"> </br> <span
+            id="item_name2"> Camera XY002 </span></br> $<span
+            id="item_price2">1950</span></li>
+          <li id="item3"><img class="float-right"
+            src="img/XY002.png" id="item_image3"> </br> <span
+            id="item_name3"> Camera XY003 </span></br> $<span
+            id="item_price3">2100</span></li>
+        </ul>
+      </div>
+    </div>
+    <!-- Hidden fields to store information of selected item -->
+    <form id="itemDetailForm" name="itemDetailForm" action="/xyz-php/item.php"
+      method="post">
+      <input type="hidden" name="itemName" id="itemName"> <input
+        type="hidden" name="itemImage" id="itemImage"> <input
+        type="hidden" name="itemPrice" id="itemPrice"> <input
+        type="hidden" name="itemQuantity" id="itemQuantity" value=1><input
+        type="hidden" name="itemDescription" id="itemDescription"
+        value="High Resolution 16.2 MP DX-format CMOS sensor Body only.
+Lenses sold separately High Speed 6 frames per second continuous shooting up to 100 shots">
+    </form>
+  </div>
+</body>
+</html>
