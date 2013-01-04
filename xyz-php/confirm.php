@@ -10,6 +10,7 @@
 include "config.php";
 include "jwt.php";
 
+
 // Decode the JWT response and return fail result if catch exceptions.
 	$wallet_response = (array)JWT::decode($_REQUEST["maskedWallet"], $Config["merchant_secret"]);
 	//$wallet_response = get_object_vars($wallet_response);
@@ -28,7 +29,7 @@ include "jwt.php";
 	$changeJwt = $_REQUEST["changeJwt"];
 /***************************************/
 
-//Tax for the entire order
+//Tax for the entire order. Need to change to variables
 $tax = "8.00";
 
 //Shipping fees for the entire order
