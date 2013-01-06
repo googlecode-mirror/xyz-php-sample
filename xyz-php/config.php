@@ -26,9 +26,10 @@ $Config = array(
   "jsURL" => "https://wallet-web.sandbox.google.com/online/v2/merchant/merchant.js",
 
   "merchant_id" => "15900245939975655206",
-  "merchant_secret" => "Uc8I7uYRU-5Lx_-HlxGIpg",
-  "merchant_name" => "PVA Cameras",
 
+  "merchant_secret" => "Uc8I7uYRU-5Lx_-HlxGIpg",
+
+  "merchant_name" => "PVA Cameras",
 
   "client_id" => "765560632621-8pf9sqbicgb8citielj6tnh8n46i7i7s.apps.googleusercontent.com",
   
@@ -36,6 +37,11 @@ $Config = array(
 
   "origin" => "http://localhost:8888",
 
-  "currency" => "USD"
+  "currency" => "USD",
+  
+  "tax_rate" => 0.08   # 8%
+
+  "shipping_rate" => 0.2  # 20%"
+
 );
 ?>

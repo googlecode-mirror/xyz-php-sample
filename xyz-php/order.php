@@ -43,11 +43,11 @@
       <table class="cart-summary">
         <tr>
           <td class="cart-summary-left">Estimated Shipping</td>
-          <td class="cart-summary-right">$9.99</td>
+          <td class="cart-summary-right">$<?=$Config["shipping_rate"]*$totalPrice?></td>
         </tr>
         <tr>
           <td class="cart-summary-left">Tax (CA)</td>
-          <td class="cart-summary-right">$8.00</td>
+          <td class="cart-summary-right">$<?=$Config["tax_rate"]*$totalPrice?></td>
         </tr>
         <tr>
           <td></td>
@@ -73,7 +73,7 @@
           Continue Checkout</button>
       </div>
     </div>
-    <!-- Form used to finish the purchase flow by posting makedWallet Response to the server -->
+    <!-- Form used to finish the purchase flow by posting maskedWallet Response to the server -->
     <form id="purchaseDetailsForm" name="purchaseDetailsForm"
       action="/xyz-php/confirm.php" method="post">
       <input type="hidden" name="maskedWallet" id="maskedWallet">

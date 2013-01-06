@@ -12,31 +12,30 @@ include "jwt.php";
 
 
 // Decode the JWT response and return fail result if catch exceptions.
-	$wallet_response = (array)JWT::decode($_REQUEST["maskedWallet"], $Config["merchant_secret"]);
-	//$wallet_response = get_object_vars($wallet_response);
-	$response = (array)$wallet_response["response"];
-	$email = $response["email"];
-	$pay = (array)$response["pay"];
-	$buyerBilling = (array)$pay["description"];
-	$ship = (array)$response["ship"];
-	$shippingAddress = (array)$ship["shippingAddress"];
-	$shippingName = $shippingAddress["name"];
-	$shippingAddress1 = $shippingAddress["address1"];
-	$shippingCity = $shippingAddress["city"];
-	$shippingState = $shippingAddress["state"];
-	$shippingPost = $shippingAddress["postalCode"];
-	$itemPrice = $_REQUEST["unitPrice"];
-	$changeJwt = $_REQUEST["changeJwt"];
-/***************************************/
-
-//Tax for the entire order. Need to change to variables
-$tax = "8.00";
-
-//Shipping fees for the entire order
-$shipping = "9.99"; 
+$wallet_response = (array)JWT::decode($_REQUEST["maskedWallet"], $Config["merchant_secret"]);
+//$wallet_response = get_object_vars($wallet_response);
+$response = (array)$wallet_response["response"];
+$email = $response["email"];
+$pay = (array)$response["pay"];
+$buyerBilling = (array)$pay["description"];
+$ship = (array)$response["ship"];
+$shippingAddress = (array)$ship["shippingAddress"];
+$shippingName = $shippingAddress["name"];
+$shippingAddress1 = $shippingAddress["address1"];
+$shippingCity = $shippingAddress["city"];
+$shippingState = $shippingAddress["state"];
+$shippingPost = $shippingAddress["postalCode"];
+$itemPrice = $_REQUEST["unitPrice"];
+$changeJwt = $_REQUEST["changeJwt"];
 
 //Get the total price by using parameteres acquired from HTTP POST/GET requests
 $totalPrice = floatval($_REQUEST["unitPrice"]) * floatval($_REQUEST["quantity"]);
+
+//Tax for the entire order.
+$tax = $Config["tax_rate"] * $totalPrice ;
+
+//Shipping fees for the entire order
+$shipping = $Config["shipping_rate"] * $totalPrice ;
 
 //This array object represents the Full Wallet Request
 $full_wallet_request = array(

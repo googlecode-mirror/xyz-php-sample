@@ -35,7 +35,7 @@ $masked_wallet_request = array(
     "clientId" => $Config["client_id"],
     "merchantName" => $Config["merchant_name"],
     "origin" => $Config["origin"],
-	"phoneNumberRequired" => true,
+	  "phoneNumberRequired" => true,
     "pay" => array(
       "estimatedTotalPrice" => "150.01",
       "currencyCode" => $Config['currency']
@@ -43,7 +43,7 @@ $masked_wallet_request = array(
     "ship" => array()
   )
 );
-$masked_wallet_request_jwt = JWT::encode($masked_wallet_request, $Config["merchant_secret"],true);
+$masked_wallet_request_jwt = JWT::encode($masked_wallet_request, $Config["merchant_secret"], true);
 ?>
 
 <html>
@@ -91,11 +91,11 @@ $masked_wallet_request_jwt = JWT::encode($masked_wallet_request, $Config["mercha
       <table class="cart-summary">
         <tr>
           <td class="cart-summary-left">Estimated Shipping</td>
-          <td class="cart-summary-right">$9.99</td>
+          <td class="cart-summary-right">$<?=$Config["shipping_rate"]*$_REQUEST["itemPrice"]?></td>
         </tr>
         <tr>
           <td class="cart-summary-left">Tax (CA)</td>
-          <td class="cart-summary-right">$8.00</td>
+          <td class="cart-summary-right">$<?=$Config["tax_rate"]*$_REQUEST["itemPrice"]?></td>
         </tr>
         <tr>
           <td></td>
@@ -103,7 +103,7 @@ $masked_wallet_request_jwt = JWT::encode($masked_wallet_request, $Config["mercha
         </tr>
         <tr>
           <td class="cart-summary-left"><b>Total</b></td>
-          <td class="cart-summary-right"><b>$<?= $_REQUEST["itemPrice"]+9.99+8.00?></b></td>
+          <td class="cart-summary-right"><b>$<?= $_REQUEST["itemPrice"]*(1+$Config["shipping_rate"]+$Config["tax_rate"]) ?></b></td>
         </tr>
       </table>
     </div>
@@ -121,11 +121,11 @@ $masked_wallet_request_jwt = JWT::encode($masked_wallet_request, $Config["mercha
           Continue Checkout</button>
       </div>
     </div>
-    <!-- Form used to finish the purchase flow by posting makedWallet Response to the server -->
+    <!-- Form used to finish the purchase flow by posting maskedWallet Response to the server -->
     <form id="purchaseDetailsForm" name="purchaseDetailsForm"
       action="/xyz-php/confirm.php" method="post">
       <input type="hidden" name="maskedWallet" id="maskedWallet">
-	  <input type="hidden" name="mwr" id="mwr" value= "<?= $masked_wallet_request_jwt ?>">
+	    <input type="hidden" name="mwr" id="mwr" value= "<?= $masked_wallet_request_jwt ?>">
       <input type="hidden" name="changeJwt" id="changeJwt" value= "<?= $masked_wallet_request_jwt ?>"> <input
         type="hidden" name="gid" id="gid"> <input type="hidden"
         name="description" id="description" value="<?= $_REQUEST["itemDescription"]?>">
